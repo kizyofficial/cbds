@@ -80,7 +80,7 @@ def predict():
         twt = tokenizer.texts_to_sequences(data)
         twt = pad_sequences(twt, maxlen=30, dtype='int32', value=0)
         # transform data
-        sentiment = model.predict(twt,batch_size=1,verbose = 2)[0]
+        sentiment = model.predict(twt,batch_size=1,verbose = 0)[0]
         if(np.argmax(sentiment) == 0):
               pred= "Non bullying"
         elif (np.argmax(sentiment) == 1):
